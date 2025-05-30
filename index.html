@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ionic App</title>
+    
+    <base href="/" />
+    
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <link rel="manifest" href="/manifest.json" />
+    
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    
+    <!-- add to homescreen for ios -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Ionic App" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
+<style>
+  .example-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+</style>
+
+<ion-tabs>
+  <ion-tab tab="home">
+    <ion-nav id="home-nav"></ion-nav>
+    <div id="home-page">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Listen now</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div class="example-content">Listen now content</div>
+      </ion-content>
+    </div>
+  </ion-tab>
+  <ion-tab tab="radio">
+    <ion-nav id="radio-nav"></ion-nav>
+    <div id="radio-page">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Radio</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div class="example-content">Radio content</div>
+      </ion-content>
+    </div>
+  </ion-tab>
+  <ion-tab tab="library">
+    <ion-nav id="library-nav"></ion-nav>
+    <div id="library-page">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Library</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div class="example-content">Library content</div>
+      </ion-content>
+    </div>
+  </ion-tab>
+  <ion-tab tab="search">
+    <ion-nav id="search-nav"></ion-nav>
+    <div id="search-page">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Search</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div class="example-content">Search content</div>
+      </ion-content>
+    </div>
+  </ion-tab>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="play-circle"></ion-icon>
+      Listen Now
+    </ion-tab-button>
+    <ion-tab-button tab="radio">
+      <ion-icon name="radio"></ion-icon>
+      Radio
+    </ion-tab-button>
+    <ion-tab-button tab="library">
+      <ion-icon name="library"></ion-icon>
+      Library
+    </ion-tab-button>
+    <ion-tab-button tab="search">
+      <ion-icon name="search"></ion-icon>
+      Search
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+<script>
+  const homeNav = document.querySelector('#home-nav');
+  const homePage = document.querySelector('#home-page');
+  homeNav.root = homePage;
+
+  const radioNav = document.querySelector('#radio-nav');
+  const radioPage = document.querySelector('#radio-page');
+  radioNav.root = radioPage;
+
+  const libraryNav = document.querySelector('#library-nav');
+  const libraryPage = document.querySelector('#library-page');
+  libraryNav.root = libraryPage;
+
+  const searchNav = document.querySelector('#search-nav');
+  const searchPage = document.querySelector('#search-page');
+  searchNav.root = searchPage;
+</script>
